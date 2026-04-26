@@ -9,58 +9,49 @@ interface ShineBorderProps {
   borderWidth?: number;
   duration?: number;
   color?: TColorProp;
+  /** Applied to the inner content surface. */
   className?: string;
   children: React.ReactNode;
 }
 
 /**
- * ShineBorder — animated gradient border that sweeps around the edge.
- * Adapted for Tailwind v4: the `animate-shine` utility is defined in globals.css.
+ * ShineBorder — animated rotating conic-gradient border.
+ *
+ * Uses a conic gradient with a CSS custom property `--shine-angle` that
+ * rotates via `@property` animation (defined in globals.css). The outer div
+ * acts as the border via padding; the inner div covers the interior with
+ * the card background.
  */
 export function ShineBorder({
   borderRadius = 8,
   borderWidth = 1,
-  duration = 14,
+  duration = 6,
   color = "#ffffff",
   className,
   children,
 }: ShineBorderProps) {
-  const gradient =
-    "radial-gradient(transparent, transparent, " +
-    (Array.isArray(color) ? color.join(",") : color) +
-    ", transparent, transparent)";
+  const stops = Array.isArray(color) ? color : [color];
+  const stopList = [...stops, stops[0]].join(", ");
+  const gradient = `conic-gradient(from var(--shine-angle), ${stopList})`;
 
   return (
     <div
       style={
         {
-          "--shine-radius": `${borderRadius}px`,
+          "--shine-duration": `${duration}s`,
           borderRadius: `${borderRadius}px`,
+          padding: `${borderWidth}px`,
+          backgroundImage: gradient,
         } as React.CSSProperties
       }
-      className={cn("relative overflow-hidden", className)}
+      className="motion-safe:animate-shine-rotate"
     >
       <div
-        aria-hidden
-        style={
-          {
-            "--shine-width": `${borderWidth}px`,
-            "--shine-duration": `${duration}s`,
-            WebkitMaskImage:
-              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-            maskImage:
-              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-            WebkitMaskComposite: "xor",
-            maskComposite: "exclude",
-            backgroundImage: gradient,
-            backgroundSize: "300% 300%",
-            padding: `${borderWidth}px`,
-            borderRadius: `${borderRadius}px`,
-          } as React.CSSProperties
-        }
-        className="pointer-events-none absolute inset-0 z-10 will-change-[background-position] motion-safe:animate-shine"
-      />
-      {children}
+        style={{ borderRadius: `${Math.max(0, borderRadius - borderWidth)}px` }}
+        className={cn("bg-card", className)}
+      >
+        {children}
+      </div>
     </div>
   );
 }

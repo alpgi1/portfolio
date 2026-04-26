@@ -52,7 +52,7 @@ export function CustomCursor() {
       <motion.div
         aria-hidden
         style={{ x, y }}
-        className="pointer-events-none fixed left-0 top-0 z-[100] -translate-x-1/2 -translate-y-1/2"
+        className="pointer-events-none fixed left-0 top-0 z-9999 -translate-x-1/2 -translate-y-1/2"
       >
         <div
           className="rounded-full bg-foreground transition-transform duration-200"
@@ -65,7 +65,7 @@ export function CustomCursor() {
       <motion.div
         aria-hidden
         style={{ x: ringX, y: ringY }}
-        className="pointer-events-none fixed left-0 top-0 z-[99] -translate-x-1/2 -translate-y-1/2"
+        className="pointer-events-none fixed left-0 top-0 z-9998 -translate-x-1/2 -translate-y-1/2"
       >
         <div
           className="rounded-full border transition-[width,height,border-color,background-color,transform] duration-200"

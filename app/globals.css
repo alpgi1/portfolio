@@ -110,3 +110,20 @@ html.lenis body {
 .animate-shine {
   animation: shine var(--shine-duration, 14s) infinite linear;
 }
+
+@property --shine-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes shine-rotate {
+  to {
+    --shine-angle: 360deg;
+  }
+}
+
+.animate-shine-rotate {
+  --shine-angle: 0deg;
+  animation: shine-rotate var(--shine-duration, 6s) linear infinite;
+}

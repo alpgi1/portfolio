@@ -87,19 +87,19 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           >
             <ShineBorder
               borderRadius={20}
-              borderWidth={1}
-              duration={18}
+              borderWidth={2}
+              duration={8}
               color={[
-                "rgba(255,255,255,0)",
-                "rgba(48,112,179,0.85)",
-                "rgba(255,255,255,0.55)",
-                "rgba(48,112,179,0.85)",
-                "rgba(255,255,255,0)",
+                "rgba(48,112,179,0)",
+                "rgba(48,112,179,1)",
+                "rgba(255,255,255,0.9)",
+                "rgba(48,112,179,1)",
+                "rgba(48,112,179,0)",
+                "rgba(48,112,179,0)",
               ]}
-              className="bg-card"
             >
               <div
-                className="max-h-[85vh] overflow-y-auto overscroll-contain"
+                className="max-h-[85vh] overflow-y-auto overscroll-contain rounded-[18px]"
                 data-lenis-prevent
               >
                 <div className="p-8 md:p-10">

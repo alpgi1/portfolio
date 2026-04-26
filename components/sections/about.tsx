@@ -15,22 +15,16 @@ export function About() {
           {/* TODO: Alpgiray to replace with final copy */}
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p>
-              I&rsquo;m Alpgiray, a Computer Science student at TUM working
-              toward becoming an AI engineer.
+              I’m Alpgiray, 
             </p>
             <p>
-              I build things end-to-end: the Spring Boot backend, the React
-              frontend, the agent pipeline, the Postgres schema, the Docker
-              build. I&rsquo;m drawn to systems where retrieval, reasoning, and
-              real products meet — supply chain agents, compliance engines,
-              training apps that actually ship.
+              CS student at TUM, but at my core, I’m a builder. I don't just study computer science; I ship end-to-end products. Whether it’s an AI-powered fitness app for real users or a complex RAG-based compliance engine for B2B SaaS, I handle the entire lifecycle: the React Native frontend, the Spring Boot backend, the intricate LLM pipelines, and the Docker deployments. I’m obsessed with turning technical architecture into real-world solutions.
             </p>
             <p>
-              Before Munich I lived in Bremen for a year, passed the Telc C1
-              Hochschule, then started at TUM in October 2025.
+               Before diving into the Munich startup ecosystem, I spent a year in Bremen mastering German (Telc C1)
             </p>
             <p>
-              Currently open to AI engineering internships in the DACH region.
+              
             </p>
           </div>
         </Reveal>
