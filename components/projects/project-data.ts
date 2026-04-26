@@ -116,7 +116,7 @@ export const projects: Project[] = [
       "Voyage embeddings",
       "Claude Sonnet",
     ],
-    links: { github: "https://github.com/alpgi1/Regu-EAACC" },
+    links: { github: "https://github.com/alpgi1/Regu-EAACC", live: "https://reguai.tech" },
     featured: true,
 
     video: "/videos/regu.mp4",
