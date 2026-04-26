@@ -63,8 +63,6 @@ export function Hero() {
             <span>Munich, DE</span>
             <span aria-hidden>·</span>
             <span>TUM &rsquo;28</span>
-            <span aria-hidden>·</span>
-            <span>open to internships</span>
           </motion.div>
         </div>
       </FluidParticlesBackground>
