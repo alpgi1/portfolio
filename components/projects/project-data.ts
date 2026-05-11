@@ -29,6 +29,45 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "gtm-zero",
+    name: "GTM-Zero",
+    year: "2026",
+    status: "MVP",
+    tagline:
+      "AI sales engineer for technical founders - live objection handling with citation-grounded answers.",
+    description:
+      "Built in 5 days for the START Munich pitch. A live AI sales engineer that handles technical objections during sales calls with citation-grounded RAG, generates hyper-personalized cold outreach, and keeps the knowledge base synced with the founder's technical docs. First-token latency under 2 seconds, citation coverage 82-100%, every claim traces back to a chunk ID.",
+    tech: [
+      "Java 21",
+      "Spring Boot 4",
+      "Spring AI 2.0",
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Postgres + pgvector",
+      "Voyage embeddings",
+      "Claude Sonnet 4.6",
+    ],
+    links: { github: "https://github.com/alpgi1/gtm-zero" },
+    featured: true,
+
+    video: "/videos/gtm-zero.mp4",
+    longDescription: [
+      "GTM-Zero solves the bottleneck that kills most solo technical founders: they can ship a product in a weekend but freeze when a CTO asks 'how do you handle GDPR' or 'what prevents prompt injection' on a sales call. GTM-Zero runs on a side monitor during the call - the founder presses a hotkey, the system retrieves the relevant chunks from their own technical docs, and streams a citation-grounded answer in under 8 seconds. Every claim cites a real source. If the AI can't ground a claim, it refuses - that refusal is the product.",
+      "Built end-to-end in 5 days: 6 Flyway migrations, custom pgvector mapping via UserType<float[]>, streaming SSE with token-by-token rendering, inline citation validation with regex-based coverage scoring, and a separate hyper-personalized outreach generator. The frontend is a split-screen 'live call' interface that mirrors a Zoom call with the prospect on the left and the streaming answer on the right. Three pitch-ready demo questions return cited answers with first-token latency under 2 seconds and 82-100% citation coverage.",
+      "The system prompt forbids invention, the validator enforces it inline (no second LLM call), and the frontend renders streaming tokens with citation chips that fade in after completion. Built as the answer to my own problem from REGU - shipping a product wasn't enough if I couldn't sell it.",
+    ],
+    role: "Solo founder - full backend (Spring Boot 4 + Spring AI), full frontend (Next.js 15 + React 19), RAG pipeline, streaming SSE architecture, prompt engineering, pitch preparation. Shipped in 5 days.",
+    highlights: [
+      "First-token latency under 2 seconds via cache warmup + Top-K=4 retrieval",
+      "82-100% citation coverage across three canonical demo questions",
+      "Custom pgvector UserType mapping for Hibernate 7 + Spring AI 2.0",
+      "Inline citation validation - no second LLM call, regex-based sentence scoring",
+      "Split-screen live-call UI with token-by-token streaming and staggered citation chip resolution",
+      "Built end-to-end in 5 days for the START Munich investor pitch",
+    ],
+  },
+  {
     slug: "apex-coach",
     name: "Apex Coach",
     year: "2026",
